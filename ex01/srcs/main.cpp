@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/21 17:52:42 by synicole          #+#    #+#             */
-/*   Updated: 2023/06/21 17:52:44 by synicole         ###   ########.fr       */
+/*   Created: 2023/06/21 17:53:49 by synicole          #+#    #+#             */
+/*   Updated: 2023/06/21 17:53:51 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "PhoneBook.class.hpp"
 
-/**
- * Print all arguments in upper case
- * @param argc
- * @param argv
- *
- * @return int
- */
 int main(int argc, char* argv[])
 {
-	if (argc > 1) {
-		// Print all arguments in upper case
-		for (int i = 1; i < argc; i++) {
-			for (int j = 0; argv[i][j]; j++) {
-				std::cout << (char)std::toupper(argv[i][j]);
-			}
-		}
-	}
-	else {
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	}
+	(void)argc;
+	(void)argv;
+	PhoneBook phonebook;
 	return (0);
 }

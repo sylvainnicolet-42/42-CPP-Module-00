@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/21 17:52:59 by synicole          #+#    #+#              #
-#    Updated: 2023/06/21 17:53:00 by synicole         ###   ########.fr        #
+#    Created: 2023/06/21 17:53:22 by synicole          #+#    #+#              #
+#    Updated: 2023/06/21 17:53:24 by synicole         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # VARIABLES
-NAME 			= megaphone
+NAME 			= phonebook
 
 # COMPILATION OPTIONS
 CC				= g++

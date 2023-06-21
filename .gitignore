@@ -1,4 +1,9 @@
 /.idea
-/ex00/objs/main.o
-/ex00/objs/megaphone.o
+
+# EX00
+/ex00/objs/*.o
 /ex00/megaphone
+
+# EX01
+/ex01/objs/*.o
+/ex01/phonebook
