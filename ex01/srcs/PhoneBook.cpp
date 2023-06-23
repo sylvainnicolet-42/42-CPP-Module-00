@@ -12,9 +12,9 @@
 
 #include "PhoneBook.class.hpp"
 
-PhoneBook::PhoneBook(void) : _nbContacts(0) {
-	std::cout << "PhoneBook constructor called" << std::endl;
-}
+PhoneBook::PhoneBook() : _maxContacts(8), _nbContacts(0) { }
+
+PhoneBook::PhoneBook(int maxContacts) : _maxContacts(maxContacts), _nbContacts(0) { }
 
 PhoneBook::~PhoneBook(void) {
 	std::cout << "📔 PhoneBook is closed, all contact will be lost! 😪" << std::endl;
@@ -47,12 +47,26 @@ void	PhoneBook::addContact(void) {
 	contact.setDarkestSecret(input);
 
 	// Add the contact to the phonebook
-	this->_contacts[this->_nbContacts] = contact;
-	this->_nbContacts++;
+	if (this->_nbContacts == this->_maxContacts) {
+		std::cout << "⚠️ PhoneBook is full, contact will replace the oldest one!" << std::endl;
+
+		// Shift the contacts to the left and replace the last one with the new contact
+		for (int i = 0; i < this->_maxContacts; i++) {
+			this->_contacts[i] = this->_contacts[i + 1];
+			if (i == this->_maxContacts - 1)
+				this->_contacts[i] = contact;
+		}
+	}
+	else
+	{
+		this->_contacts[this->_nbContacts] = contact;
+		this->_nbContacts++;
+	}
 	std::cout << "✅ Contact added!" << std::endl;
+	std::cout << "📔 PhoneBook (" << this->_nbContacts << "/" << this->_maxContacts << ")" << std::endl;
 }
 
-void	PhoneBook::searchContact(void) {
+void	PhoneBook::searchContact(void) const {
 
 	// Display the contacts
 	std::cout << "📔 Contacts" << std::endl;
@@ -70,8 +84,7 @@ void	PhoneBook::searchContact(void) {
 	displayContactByIndex();
 }
 
-void PhoneBook::displayContactByIndex()
-{
+void PhoneBook::displayContactByIndex(void) const {
 	std::cout << "🔍 Find contact" << std::endl;
 	std::string input;
 
@@ -97,4 +110,3 @@ void PhoneBook::displayContactByIndex()
 			std::cout << "❌ Error: index must be a number" << std::endl;
 	} while (input != "q");
 }
-

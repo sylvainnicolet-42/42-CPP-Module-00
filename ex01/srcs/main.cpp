@@ -15,8 +15,8 @@
 
 int main(void)
 {
-	// Initialize the phonebook
-	PhoneBook phonebook;
+	// Initialize the phonebook with a maximum of 8 contacts
+	PhoneBook phonebook(8);
 
 	// Get the user input
 	std::string input;

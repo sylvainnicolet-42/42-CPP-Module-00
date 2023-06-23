@@ -20,13 +20,15 @@
 class PhoneBook {
 	public:
 		PhoneBook(void);
+		PhoneBook(int maxContacts);
 		~PhoneBook(void);
 
 		void	addContact(void);
-		void	searchContact(void);
-		void 	displayContactByIndex();
+		void	searchContact(void) const;
+		void 	displayContactByIndex(void) const;
 	private:
 		Contact	_contacts[8];
+		int		_maxContacts;
 		int		_nbContacts;
 };
 
