@@ -12,7 +12,7 @@
 
 #include "PhoneBook.class.hpp"
 
-PhoneBook::PhoneBook() : _maxContacts(8), _nbContacts(0) { }
+PhoneBook::PhoneBook(void) : _maxContacts(8), _nbContacts(0) { }
 
 PhoneBook::PhoneBook(int maxContacts) : _maxContacts(maxContacts), _nbContacts(0) { }
 
@@ -52,9 +52,10 @@ void	PhoneBook::addContact(void) {
 
 		// Shift the contacts to the left and replace the last one with the new contact
 		for (int i = 0; i < this->_maxContacts; i++) {
-			this->_contacts[i] = this->_contacts[i + 1];
 			if (i == this->_maxContacts - 1)
 				this->_contacts[i] = contact;
+			else
+				this->_contacts[i] = this->_contacts[i + 1];
 		}
 	}
 	else
