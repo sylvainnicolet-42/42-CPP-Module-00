@@ -10,12 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "PhoneBook.class.hpp"
 
-int main(int argc, char* argv[])
+int main(void)
 {
-	(void)argc;
-	(void)argv;
+	// Initialize the phonebook
 	PhoneBook phonebook;
+
+	// Get the user input
+	std::string input;
+	do {
+		std::cout << "Enter you command (ADD, SEARCH, EXIT): ";
+		std::getline(std::cin, input);
+		if (input == "ADD")
+			phonebook.addContact();
+		else if (input == "SEARCH")
+			phonebook.searchContact();
+		else if (input == "EXIT")
+			std::cout << "EXIT" << std::endl;
+		else
+			std::cout << "❌ Invalid command" << std::endl;
+	} while (input != "EXIT");
 	return (0);
 }
