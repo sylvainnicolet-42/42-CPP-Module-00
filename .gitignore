@@ -1,4 +1,5 @@
 /.idea
+**/.DS_Store
 
 # EX00
 /ex00/objs/*.o
