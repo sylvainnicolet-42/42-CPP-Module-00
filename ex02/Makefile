@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 # VARIABLES
-NAME 			= phonebook
+NAME 			= account
 
 # COMPILATION OPTIONS
 CC				= g++

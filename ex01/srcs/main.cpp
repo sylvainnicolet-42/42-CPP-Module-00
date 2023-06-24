@@ -31,6 +31,6 @@ int main(void)
 			std::cout << "EXIT" << std::endl;
 		else
 			std::cout << "❌ Invalid command" << std::endl;
-	} while (input != "EXIT");
+	} while (input != "EXIT" && !std::cin.eof());
 	return (0);
 }

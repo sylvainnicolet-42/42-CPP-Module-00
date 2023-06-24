@@ -7,3 +7,8 @@
 # EX01
 /ex01/objs/*.o
 /ex01/phonebook
+
+# EX02
+/ex02/objs/*.o
+/ex02/account
+/ex02/log.txt
