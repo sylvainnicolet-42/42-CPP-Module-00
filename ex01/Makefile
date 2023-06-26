@@ -14,8 +14,8 @@
 NAME 			= phonebook
 
 # COMPILATION OPTIONS
-CC				= g++
-FLAGS 			= -std=c++98 -Wall -Werror -Wextra
+CC				= c++
+FLAGS 			= -Wall -Werror -Wextra -std=c++98
 
 # OBJ
 OBJS_DIR   		= objs

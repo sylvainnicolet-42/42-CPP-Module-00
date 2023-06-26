@@ -26,25 +26,50 @@ void	PhoneBook::addContact(void) {
 	std::cout << "📝 Add contact" << std::endl;
 	std::string input;
 
-	std::cout << "First name: ";
-	std::getline(std::cin, input);
-	contact.setFirstName(input);
+	do {
+		std::cout << "First name: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "⚠️ First name cannot be empty!" << std::endl;
+		else
+			contact.setFirstName(input);
+	} while (input.empty());
 
-	std::cout << "Last name: ";
-	std::getline(std::cin, input);
-	contact.setLastName(input);
+	do {
+		std::cout << "Last name: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "⚠️ Last name cannot be empty!" << std::endl;
+		else
+			contact.setLastName(input);
+	} while (input.empty());
 
-	std::cout << "Nickname: ";
-	std::getline(std::cin, input);
-	contact.setNickname(input);
+	do {
+		std::cout << "Nickname: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "⚠️ Nickname cannot be empty!" << std::endl;
+		else
+			contact.setNickname(input);
+	} while (input.empty());
 
-	std::cout << "Phone number: ";
-	std::getline(std::cin, input);
-	contact.setPhoneNumber(input);
+	do {
+		std::cout << "Phone number: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "⚠️ Phone number cannot be empty!" << std::endl;
+		else
+			contact.setPhoneNumber(input);
+	} while (input.empty());
 
-	std::cout << "Darkest secret: ";
-	std::getline(std::cin, input);
-	contact.setDarkestSecret(input);
+	do {
+		std::cout << "Darkest secret: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "⚠️ Darkest secret cannot be empty!" << std::endl;
+		else
+			contact.setDarkestSecret(input);
+	} while (input.empty());
 
 	// Add the contact to the phonebook
 	if (this->_nbContacts == this->_maxContacts) {
@@ -92,7 +117,9 @@ void PhoneBook::displayContactByIndex(void) const {
 	do {
 		std::cout << "Index (q to quite): ";
 		std::getline(std::cin, input);
-		if (containsOnlyDigit(input))
+		if (input.empty())
+			std::cout << "⚠️ Index cannot be empty!" << std::endl;
+		else if (containsOnlyDigit(input))
 		{
 			int index = std::stoi(input);
 			if (index < 0 || index >= this->_nbContacts) {
